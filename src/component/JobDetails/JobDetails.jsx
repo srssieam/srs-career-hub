@@ -4,7 +4,7 @@ import { MdOutlineDateRange, MdOutlineMail } from 'react-icons/Md';
 import { BsTelephone } from 'react-icons/Bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveJobApplication } from "../Utility/LocalStorage";
+import { saveJobApplication } from "../Utility/LocalStorage";  // this function is imported to get applied jobs id
 
 
 const JobDetails = () => {
@@ -15,7 +15,7 @@ const JobDetails = () => {
     const { job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information } = job;
 
     const notify = () =>{
-        saveJobApplication(id)
+        saveJobApplication(parseInt(id))   // passing id to LocalStorage.jsx and AppliedJobs.jsx component
         toast("Applied successfully");
     } 
 
