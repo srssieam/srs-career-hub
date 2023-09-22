@@ -16,8 +16,8 @@ const Job = ({ job }) => {
             <button className="px-4 py-2 border-2 border-violet-500 rounded-lg text-violet-500 font-bold">{job_type}</button>
           </div>
           <div className="flex">
-                <p className='flex items-center gap-2'><GrLocation />{location}</p>
-                <p className='flex items-center gap-2'><HiOutlineCurrencyDollar />Salary: {salary}</p>
+                <p className='flex items-center gap-2'><GrLocation className='text-xl'/>{location}</p>
+                <p className='flex items-center gap-2'><HiOutlineCurrencyDollar className='text-xl' />Salary: {salary}</p>
             </div>
           <div className="card-actions ">
             <a className="btn bg-gradient-to-r to-violet-500 from-indigo-500 font-semibold text-white normal-case">View Details</a>
