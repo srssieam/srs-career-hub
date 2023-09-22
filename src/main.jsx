@@ -9,6 +9,7 @@ import Root from './component/Root/Root';
 import Home from './component/Home/Home';
 import AppliedJobs from './component/AppliedJobs/AppliedJobs';
 import ErrorPage from './component/ErrorPage/ErrorPage';
+import CategoryList from './component/CategoryList/CategoryList';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/applied-jobs",
         element: <AppliedJobs></AppliedJobs>
+      },
+      {
+        path: "/job-category",
+        element: <CategoryList></CategoryList>
       }
     ]
   },
