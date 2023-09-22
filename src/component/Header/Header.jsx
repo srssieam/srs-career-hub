@@ -8,7 +8,7 @@ const Header = () => {
         <li><NavLink to='blog'>Blog</NavLink></li>
     </>
     return (
-        <div>
+        <div className="md:px-[30px] lg:px-[100px]">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -19,7 +19,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="text-transparent bg-clip-text bg-gradient-to-r to-purple-600 from-blue-500 normal-case md:text-3xl font-bold">Career Hub</a>
+                    <a className="text-transparent bg-clip-text bg-gradient-to-r to-purple-600 from-blue-500 normal-case text-lg md:text-3xl font-bold">Career Hub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -27,7 +27,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-gradient-to-r to-violet-500 from-indigo-500 font-bold text-white">Star Applying</a>
+                    <button className="p-2 md:px-5 md:py-3 rounded-[10px] bg-gradient-to-r to-violet-500 from-indigo-500 text-sm md:text-base font-bold text-white normal-case">Star Applying</button>
                 </div>
             </div>
         </div>
