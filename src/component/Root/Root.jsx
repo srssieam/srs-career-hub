@@ -7,7 +7,9 @@ const Root = () => {
     return (
         <div>
             <Header></Header>
+            <div className="mx-auto lg:max-w-screen-xl">
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

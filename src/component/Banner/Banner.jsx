@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div className="px-4 md:px-[50px] md:flex md:justify-between items-center gap-[50px] mx-auto lg:max-w-[1400px]">
+        <div className="px-4 md:px-[50px] md:flex md:justify-between items-center gap-[50px]">
             <div className="flex-1 text-center md:text-left">
                 <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">One Step Closer <br /> To Your <br /> 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-violet-500 from-indigo-500">Dream Job</span></h1>
