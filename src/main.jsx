@@ -10,6 +10,7 @@ import Home from './component/Home/Home';
 import AppliedJobs from './component/AppliedJobs/AppliedJobs';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import CategoryList from './component/CategoryList/CategoryList';
+import JobDetails from './component/JobDetails/JobDetails';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/job-category",
         element: <CategoryList></CategoryList>
+      },
+      {
+        path: "/job/:id",    // In this route, :id is a parameter in the URL, and it can have different values when the URL changes.
+        element: <JobDetails></JobDetails>,
+        loader: () =>fetch('/src/data/jobs.json')
       }
     ]
   },
