@@ -9,7 +9,21 @@ import { Link } from 'react-router-dom';
 const AppliedJobs = () => {
     const jobs = useLoaderData();
 
-    const [AppliedJobs, setAppliedJobs] = useState([]);
+    const [appliedJobs, setAppliedJobs] = useState([]);
+    const [displayJobs, setDisplayJobs] = useState([]);
+
+    const handleJobsFilter = filter => {
+        if (filter === 'all') {
+            setDisplayJobs(appliedJobs);
+        }
+        else if (filter === 'remote') {
+            const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote');
+            setDisplayJobs(remoteJobs);
+        } else if (filter === 'onsite') {
+            const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite');
+            setDisplayJobs(onsiteJobs)
+        }
+    }
 
     useEffect(() => {
         const storedJobIds = getStoredJobApplication();
@@ -24,19 +38,30 @@ const AppliedJobs = () => {
                 }
             }
             setAppliedJobs(jobsApplied);
+            setDisplayJobs(jobsApplied)
         }
-    }, [])
+    }, [jobs])
+
+
     return (
         <div className="md:my-6 lg:my-20">
             <h1 className="text-2xl font-bold text-center">Applied Jobs</h1>
+            <details className="dropdown mb-32">
+                <summary className="m-1 btn">Filter by</summary>
+                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <li onClick={() => handleJobsFilter('all')}><a>All</a></li>
+                    <li onClick={() => handleJobsFilter('remote')}><a>Remote</a></li>
+                    <li onClick={() => handleJobsFilter('onsite')}><a>onsite</a></li>
+                </ul>
+            </details>
             <div className="flex flex-col gap-6 my-6 lg:my-12 px-6 lg:px-0">
                 {
-                    AppliedJobs.map((job) => {
+                    displayJobs.map((job) => {
                         return (
                             <div key={job.id} className="grid md:grid-cols-3 lg:grid-cols-4 shadow-xl border border-base-600 rounded-xl">
                                 <div className="md:flex items-center md:col-span-2 lg:col-span-3">
                                     <div className="lg:w-48 p-3 lg:p-11 bg-slate-100 w-24 mx-auto md:mx-0">
-                                    <img src={job.logo} alt="" className="w-full" />
+                                        <img src={job.logo} alt="" className="w-full" />
                                     </div>
                                     <div className="lg:space-y-2 p-3">
                                         <p className="font-bold">{job.job_title}</p>
