@@ -9,7 +9,7 @@ const Banner = () => {
                 <a className="btn bg-gradient-to-r to-violet-500 from-indigo-500 font-semibold text-white normal-case">Get Started</a>
             </div>
             <div className="flex-1">
-                <img src="/src/assets/images/user.png" alt="user img" />
+                <img src="/images/user.png" alt="user img" />
             </div>
         </div>
     );

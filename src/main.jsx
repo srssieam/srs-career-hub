@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/applied-jobs",
         element: <AppliedJobs></AppliedJobs>,
-        loader: () =>fetch('/src/data/jobs.json')
+        loader: () =>fetch('/jobs.json')
       },
       {
         path: "/job-category",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/job/:id",    // In this route, :id is a parameter in the URL, and it can have different values when the URL changes.
         element: <JobDetails></JobDetails>,
-        loader: () =>fetch('/src/data/jobs.json')
+        loader: () =>fetch('/jobs.json')
       }
     ]
   },
