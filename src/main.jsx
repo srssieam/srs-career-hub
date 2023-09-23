@@ -11,6 +11,7 @@ import AppliedJobs from './component/AppliedJobs/AppliedJobs';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import CategoryList from './component/CategoryList/CategoryList';
 import JobDetails from './component/JobDetails/JobDetails';
+import FeaturedJobs from './component/Featured Jobs/FeaturedJobs';
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: "/job/:id",    // In this route, :id is a parameter in the URL, and it can have different values when the URL changes.
         element: <JobDetails></JobDetails>,
         loader: () =>fetch('/jobs.json')
+      },
+      {
+        path: "/featured-jobs",
+        element: <FeaturedJobs></FeaturedJobs>
       }
     ]
   },
